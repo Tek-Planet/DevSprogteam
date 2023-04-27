@@ -1,0 +1,40 @@
+places that requires changes from testing to live
+
+authProvider
+Routejs
+data.js
+
+login screen 1 place
+signupscreen 2 place
+forgot passwords 3 places
+bookingdetails 1 place
+profile screen 1 place
+util 1 place
+
+
+to do
+
+
+
+translation
+bottom tab text
+
+
+//fix for fetchblob
+
+//import {NativeModules} from 'react-native';
+//const RNFetchBlob = NativeModules.RNFetchBlob
+
+//gifted chat fix
+
+//https://github.com/FaridSafi/react-native-gifted-chat/issues/2090
+
+Translate services
+
+Add expereice to authorized and interprepter
+remove all translator
+check file download
+better icon for services
+
+
+https://www.math.utah.edu/~aroberts/M3210-1d.pdf
