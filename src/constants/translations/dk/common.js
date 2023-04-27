@@ -107,7 +107,7 @@ export default {
   add_to_favourite: 'Føj til favorit',
   rate: 'Bedøm',
   accept: 'Acceptere',
-  reject: 'Afvise',
+  reject: 'Aflys',
   cancel: 'Afbestille',
   apply: 'ansøge',
   my: 'Min',
