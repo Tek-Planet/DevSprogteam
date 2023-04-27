@@ -256,6 +256,7 @@
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				BB6D712229FA9687000D5C12 /* Remove  AccessibilityResources.bundle */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				EAF40F99364A351F31F779CD /* [CP] Embed Pods Frameworks */,
@@ -457,6 +458,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SprogTeam-SprogTeamTests/Pods-SprogTeam-SprogTeamTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BB6D712229FA9687000D5C12 /* Remove  AccessibilityResources.bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Remove  AccessibilityResources.bundle";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Xcode project build phase script\n\n# Remove the AccessibilityResources.bundle file before the build starts\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/AccessibilityResources.bundle\"\n";
 		};
 		EAF40F99364A351F31F779CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
