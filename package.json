@@ -21,6 +21,7 @@
     "@react-navigation/material-top-tabs": "^6.1.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "@stripe/stripe-react-native": "^0.2.3",
     "axios": "^0.25.0",
     "dayjs": "^1.10.7",
     "i18next": "^21.6.11",
