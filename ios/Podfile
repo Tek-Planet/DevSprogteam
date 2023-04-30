@@ -30,10 +30,10 @@ target 'SprogTeam' do
       if target.name == "React-Core-AccessibilityResources"
       target.remove_from_project
        end
-    # target.build_configurations.each do |config|
+    target.build_configurations.each do |config|
     # some older pods don't support some architectures, anything over iOS 11 resolves that
-      # config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
-    # end
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+    end
   end
   end
 end
