@@ -127,6 +127,17 @@ def enableHermes = project.ext.react.get("enableHermes", false);
  */
 def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitectures")
 
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def kotlinVersion = "1.6.0"
+        def requested = details.requested
+        if (requested.group == 'org.jetbrains.kotlin') {
+            List<String> list = ['kotlin-stdlib', 'kotlin-stdlib-jdk7', 'kotlin-stdlib-jdk8', 'kotlin-stdlib-common']
+            if (list.contains(requested.name)) { details.useVersion kotlinVersion }
+        }
+    }
+}
+
 android {
        dexOptions {
        javaMaxHeapSize "3g"
@@ -202,6 +213,8 @@ android {
 }
 
 dependencies {
+
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
