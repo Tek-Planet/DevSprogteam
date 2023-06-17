@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import Calendar from '../../components/Calendar';
-import TitleHeader from '../../components/TitleHeader';
 import {fonts} from '../../assets/fonts';
 import Button from '../../components/Button';
 import TextBox from '../../components/TextInput';
@@ -27,17 +26,16 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {getServerToken, storeUserName} from '../../data/data';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {authBaseUrl, dimention, setHeaders} from '../../util/util';
-import {CountryPickerModal} from '../../components';
+import {CountryPickerModal, SignUpHeader} from '../../components';
 import {colors} from '../../assets/colors';
 
-const SignUpTranslatorScreen = ({navigation}) => {
-  const {setUser, setAuth} = useContext(AuthContext);
+const SignUpTranslatorScreen = ({navigation, route}) => {
   const {t} = useTranslation();
   const [terms, setTerms] = useState(false);
 
   const [calendarVisible, setCalendarVisible] = useState(false);
 
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState(route?.params?.email);
   const [checkedMale, setCheckedMale] = useState(null);
   const [firstName, setFirstName] = useState(null);
   const [companyName, setCompanyName] = useState(null);
@@ -285,8 +283,8 @@ const SignUpTranslatorScreen = ({navigation}) => {
         <Image
           resizeMode="contain"
           style={{
-            height: 80,
-            width: 80,
+            height: 60,
+            width: 60,
             marginTop: 20,
             borderRadius: 100,
           }}
@@ -305,7 +303,9 @@ const SignUpTranslatorScreen = ({navigation}) => {
             elevation: 2,
             marginBottom: 20,
           }}>
-          <TitleHeader title={t('common:create_new_user')} />
+          {/* <TitleHeader title={t('common:create_new_user')} /> */}
+
+          <SignUpHeader page={1} />
 
           {/* usetype */}
 
@@ -316,6 +316,8 @@ const SignUpTranslatorScreen = ({navigation}) => {
               name="mail-outline"
               onChangeText={val => setEmail(val.trim())}
               placeholderTextColor="#fafafa"
+              value={email}
+              editable={false}
             />
 
             {/* firsname */}
@@ -421,7 +423,7 @@ const SignUpTranslatorScreen = ({navigation}) => {
                 <View style={{flex: 1}}>
                   <TextBoxTitle title={t('common:date_of_birth')} />
 
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{flexDirection: 'row', alignItems: 'center'}}>
                     <View style={{flex: 0.5}}>
                       <TextBox
                         name="calendar"
@@ -431,16 +433,17 @@ const SignUpTranslatorScreen = ({navigation}) => {
                         placeholderTextColor="#fafafa"
                       />
                     </View>
-                    <Icon
-                      type={'feather'}
-                      onPress={() => {
-                        setCalendarVisible(true);
-                      }}
-                      name={'calendar'}
-                      size={25}
-                      color={'#659ED6'}
-                      style={{margin: 10, marginTop: 5}}
-                    />
+                    <View style={{marginStart: 10}}>
+                      <Icon
+                        type={'feather'}
+                        onPress={() => {
+                          setCalendarVisible(true);
+                        }}
+                        name={'calendar'}
+                        size={30}
+                        color={'#659ED6'}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
@@ -708,6 +711,9 @@ const SignUpTranslatorScreen = ({navigation}) => {
                       return;
                     }
                     signUp();
+                    // navigation.replace('NewKYC', {
+                    //   email: 'techplanet49@gmail.com',
+                    // });
                   }}
                   bGcolor={'#659ED6'}
                   buttonTitle={t('common:sign_up')}

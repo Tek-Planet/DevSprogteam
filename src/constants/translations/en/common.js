@@ -309,4 +309,9 @@ export default {
   freelancer: 'Freelancer',
   review: 'Review',
   negotiate: 'You can edit price to negotiate',
+  account_completion:
+    'You can add another language or click the button below to complete your profile creation',
+  done: 'Done',
+  otp_text: 'Please enter the 4 digit code sent to',
+  email_text: 'Enter your email to get started',
 };
