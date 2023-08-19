@@ -43,7 +43,7 @@ const TranslatorList = props => {
     // You can await here
 
     const res = await getGiGs(item.Id);
-    // console.log('gig no dey', res);
+
     setGigs(res);
   }
 
@@ -228,13 +228,16 @@ const TranslatorList = props => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {gigs?.map((gigItem, index) => {
                 if (
-                  gigItem.title.toLowerCase().includes(filter?.toLowerCase()) ||
-                  gigItem.service
+                  gigItem?.package?.length > 0 &&
+                  (gigItem?.title
                     .toLowerCase()
                     .includes(filter?.toLowerCase()) ||
-                  gigItem.languageName
-                    .toLowerCase()
-                    .includes(filter?.toLowerCase())
+                    gigItem?.service
+                      .toLowerCase()
+                      .includes(filter?.toLowerCase()) ||
+                    gigItem?.languageName
+                      .toLowerCase()
+                      .includes(filter?.toLowerCase()))
                 )
                   return (
                     <GigListPrice
