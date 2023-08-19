@@ -15,6 +15,7 @@ yarn
 sed -i '' '2232s/|/||/g' /Volumes/workspace/repository/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp
 pod install
 # remove accessibilyi
+# stille it
 # /Users/tek/Documents/Projects/ReactNative/NativeProjects/EaziInvest/ios/Pods/Pods.xcodeproj/xcuserdata/tek.xcuserdatad
 # rm -r /Volumes/workspace/repository/ios/Podszoj/xcuserdata/tek.xcuserdatad/React-Core-AccessibilityResources
 # the sed command from RN cant find the file... so we have to run it ourselves
