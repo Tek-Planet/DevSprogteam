@@ -1,6 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 platform :ios, '13.0'
 
 target 'SprogTeam' do
@@ -30,10 +31,6 @@ target 'SprogTeam' do
       if target.name == "React-Core-AccessibilityResources"
       target.remove_from_project
        end
-    target.build_configurations.each do |config|
-    # some older pods don't support some architectures, anything over iOS 11 resolves that
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
     end
-  end
   end
 end
