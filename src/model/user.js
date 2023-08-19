@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {baseURL} from '../util/util';
-
+// data file for user actions
 export const deleteAccount = async id => {
   console.log('Delteting account for ', id);
   try {
