@@ -638,6 +638,8 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SprogTeam/SprogTeamRelease.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 28;
 				DEVELOPMENT_TEAM = 4Y6RC5M442;
 				INFOPLIST_FILE = SprogTeam/Info.plist;
@@ -653,6 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dev.techplanetapps.aats;
 				PRODUCT_NAME = SprogTeam;
+				PROVISIONING_PROFILE_SPECIFIER = DevSprogteam;
 				SWIFT_OBJC_BRIDGING_HEADER = "SprogTeam-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
